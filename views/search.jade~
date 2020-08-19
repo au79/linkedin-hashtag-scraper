@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= title
+  form(name="search", method="post")      
+    div.input
+      span.label Username
+      input(type="text", name="user")
+      br
+      span.label Password
+      input(type="text", name="pass")
+    div.actions
+      input(type="submit", value="Login")
+

@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= title
+  div.message
+    p #{message}
+    br
+  form(name="login", method="post")      
+    div.input
+      span.label Cookie
+      input(type="text", name="cookie")
+    div.actions
+      input(type="submit", value="Login with Cookie")
+

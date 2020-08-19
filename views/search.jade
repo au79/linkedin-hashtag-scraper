@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= title
+  div.message
+    p #{message}
+    br
+  form(name="search", method="post")      
+    div.input
+      span.label Hashtag:&nbsp;&nbsp;#
+      input(type="text", name="hashtag")
+    div.actions
+      input(type="submit", value="Search")
+

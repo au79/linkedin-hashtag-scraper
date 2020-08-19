@@ -1,0 +1,17 @@
+var express = require('express');
+var router = express.Router();
+
+/* GET home page. */
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'LinkedIn Scraper' });
+});
+
+router.post('/', async function(req, res, next) {
+  req.app.locals.browser = await req.app.locals.pup.launch({headless: false});
+  const page = await req.app.locals.browser.newPage();
+  await page.goto('https://www.linkedin.com/')
+  
+  res.redirect('/search');
+});
+
+module.exports = router;
